@@ -79,6 +79,9 @@ class ObjectSerializer {
                 return data;
             }
 
+            // Get the actual type of this object
+            type = this.findCorrectType(data, type);
+
             // get the map for the correct type.
             let attributeTypes = typeMap[type].getAttributeTypeMap();
             let instance: {[index: string]: any} = {};
